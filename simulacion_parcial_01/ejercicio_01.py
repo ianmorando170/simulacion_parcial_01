@@ -49,6 +49,9 @@ def validar_contrasena(contrasena):
     digito = False
 
     for caracter in contrasena:
+        # CORRECCIÓN: la consigna pide "sin espacios en blanco". Comparar con " "
+        # solo detecta el espacio normal, pero no \t (tab) ni \n (salto de línea).
+        # Sería más correcto usar caracter.isspace(), que detecta todos los espacios en blanco.
         # Si hay espacio, es inválida directamente
         if caracter == " ":
             return False

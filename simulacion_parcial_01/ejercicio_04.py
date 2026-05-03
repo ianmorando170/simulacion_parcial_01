@@ -69,6 +69,12 @@ def contar_todos(lista):
 
     for l in elementos_unicos:
         cantidad = contar_apariciones(lista, l)
+        # CORRECCIÓN: el formato pedido en la consigna diferencia singular y plural:
+        #   "manzana" aparece 3 veces
+        #   "pera" aparece 1 vez   <-- en singular debe decir "vez", no "veces"
+        # Además, los ejemplos no llevan punto final. Sugerencia:
+        #   palabra = "vez" if cantidad == 1 else "veces"
+        #   print(f"{l} aparece {cantidad} {palabra}")
         print(f"{l} aparece {cantidad} veces.")
 
 
