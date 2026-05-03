@@ -61,13 +61,19 @@ while True:
 
     # Desarrollamos las opciones, solo '3' no devuelve menú después de las conversiones.
     if opcion == "1":
+        # OBSERVACIÓN: float(input(...)) tira ValueError si el usuario ingresa
+        # texto en vez de un número (ej: "diez"). Conviene envolver la conversión
+        # en un try/except ValueError para validar el ingreso, tal como sugiere
+        # la sección "Recomendaciones" del README ("evaluar si hacen falta
+        # validaciones del ingreso del usuario").
         km = float(input("Ingrese los kilómetros: "))
         if km > 0:
             resultado = km_a_millas(km)
             print(f"{km} km = {resultado:.2f} millas")
         else:
-            print("El valor debe ser positivo.")    
+            print("El valor debe ser positivo.")
     elif opcion == "2":
+        # OBSERVACIÓN: misma sugerencia de validación que en la opción 1.
         kg = float(input("Ingrese los kilogramos: "))
         if kg > 0:
             resultado = kg_a_libras(kg)
